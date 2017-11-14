@@ -4,42 +4,35 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
     <div id="app">
         <input type="text" v-model="input" autofocus>
         <ul>
-            <li v-for="item in array | filterBy input">{{item.name}}, {{item.age}}</li>
+            <li v-for="item in userData | filterBy input">{{item.name}}, {{item.id}}</li>
         </ul>
     </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
     <script>
-        new Vue({
-            el: "#app",
-            data: {
-                input: '',
-                array: [
-                    {
-                        name: 'Иван',
-                        age: 45
-                    },
-                    {
-                        name: 'Вика',
-                        age: 19
-                    },
-                    {
-                        name: 'Иван',
-                        age: 29
-                    },
-                    {
-                        name: 'Максим',
-                        age: 20
-                    }
-                ]
-            }
+        var dataURL = 'example.json';
+        var app = new Vue({
+          el: '#app',
+          data: {
+            searchText: '',
+            userData: [] // initialize empty array
+          },
+          mounted() { // when the Vue app is booted up, this is run automatically.
+            var self = this // create a closure to access component in the callback below
+            $.getJSON(dataURL, function(data) {
+              self.userData = data.users;
+            });
+          }
         })
     </script>
+
+
 </body>
 </html>
