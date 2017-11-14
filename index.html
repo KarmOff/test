@@ -11,7 +11,7 @@
     <div id="app">
         <input type="text" v-model="input" autofocus>
         <ul>
-            <li v-for="item in userData | filterBy input">{{item.name}}, {{item.id}}</li>
+            <li v-for="item in userData | filterBy input">{{item.name}}, {{item.age}}</li>
         </ul>
     </div>
 
@@ -22,14 +22,14 @@
           el: '#app',
           data: {
             input: '',
-            userData: [] // initialize empty array
-          },
-          mounted() { // when the Vue app is booted up, this is run automatically.
-            var self = this // create a closure to access component in the callback below
-            $.getJSON(dataURL, function(data) {
-              self.userData = data.users;
-            });
-          }
+            userData: []
+        },
+        mounted() { // when the Vue app is booted up, this is run automatically.
+          var self = this // create a closure to access component in the callback below
+          $.getJSON(dataURL, function(data) {
+            self.userData = data.users;
+          });
+        }
         })
     </script>
 
