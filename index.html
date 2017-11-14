@@ -8,6 +8,13 @@
 </head>
 <body>
 
+    <script type="text/javascript">
+    var self = this // create a closure to access component in the callback below
+    $.getJSON(dataURL, function(data) {
+      self.userData = data.users;
+    });
+    </script>
+
     <div id="app">
         <input type="text" v-model="input" autofocus>
         <ul>
@@ -23,12 +30,6 @@
           data: {
             input: '',
             userData: []
-        },
-        mounted() { // when the Vue app is booted up, this is run automatically.
-          var self = this // create a closure to access component in the callback below
-          $.getJSON(dataURL, function(data) {
-            self.userData = data.users;
-          });
         }
         })
     </script>
