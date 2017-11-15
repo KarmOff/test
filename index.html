@@ -18,7 +18,7 @@
             <div id="app">
                 <input type="text" class="delivery__input" v-model="input" v-on:input="myinput" autofocus>
                 <ul class="delivery__list">
-                    <li v-for="item in userData | filterBy input" >{{item.id}}, {{item.name}}, {{item.price}}</li>
+                    <li v-for="item in userData | filterBy input" data-price='{{item.price}}'>{{item.id}}, {{item.name}}, {{item.price}}</li>
                 </ul>
                 <div class="delivery__result">
                     <div class="delivery__adress">
@@ -67,7 +67,7 @@
              var delivery__list = document.querySelector('.delivery__list');
              var total_price    = document.querySelector('.delivery__total-price');
              delivery__list.style.display = "flex";
-             
+
           }
       }
         })
