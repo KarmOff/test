@@ -18,7 +18,7 @@
             <div id="app">
                 <input type="text" v-model="input" autofocus>
                 <button type="button" name="button">Расчитать</button>
-                <ul>
+                <ul class="delivery__list">
                     <li v-for="item in userData | filterBy input">{{item.id}}, {{item.name}}, {{item.price}}</li>
                 </ul>
                 <div class="delivery__result">
