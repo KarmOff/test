@@ -3,6 +3,7 @@ body {
 }
 #app {
     width: 100%;
+    position: relative;
 }
 .delivery__title {
     text-align: center;
@@ -33,12 +34,14 @@ body {
 }
 
 .delivery__list {
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 300px;
     margin: 0 auto;
     height: 400px;
     overflow-y: auto;
+
 }
 .delivery__result {
     display: flex;
