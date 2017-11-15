@@ -18,7 +18,7 @@
             <div id="app">
                 <input type="text" class="delivery__input" v-model="input" v-on:input="myinput" autofocus>
                 <ul class="delivery__list">
-                    <li v-for="item in userData | filterBy input" class="delivery__item" v-on:click="element_click" data-price='{{item.price}}'>{{item.name}}</li>
+                    <li v-for="item in userData | filterBy input" class="delivery__item" v-on:click="element_click" data-name='{{item.name}}' data-price='{{item.price}}'>{{item.name}}</li>
                 </ul>
                 <div class="delivery__result">
                     <div class="delivery__adress">
@@ -73,6 +73,7 @@
              var this_price = e.target.attributes['data-price'].value;
              document.querySelector('.delivery__price-value').innerText = this_price;
              document.querySelector('.delivery__price-value2').innerText = this_price * 7;
+             document.querySelector('.delivery__input').value = e.target.attributes['data-name'].value;
          }
       }
         })
