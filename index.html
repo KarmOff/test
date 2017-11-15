@@ -65,7 +65,9 @@
       }, methods: {
           myinput: function() {
              var delivery__list = document.querySelector('.delivery__list');
-             delivery__list.style.display = "flex";
+             if(document.querySelector('.delivery__item')) {
+                  delivery__list.style.display = "flex";
+             }
          },
          element_click: function(e) {
              var this_price = e.target.attributes['data-price'].value;
