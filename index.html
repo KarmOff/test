@@ -28,7 +28,7 @@
                         </div>
                         <div class="delivery__adress-item delivery__to">
                             <p>Адрес доставки</p>
-                            <span>АЭРОПОРТ ПУЛКОВО-2</span>
+                            <span class="delivery__to-value"></span>
                         </div>
                     </div>
                     <div class="delivery__price">
@@ -74,6 +74,7 @@
              document.querySelector('.delivery__price-value').innerText = this_price;
              document.querySelector('.delivery__price-value2').innerText = this_price * 7;
              document.querySelector('.delivery__input').value = e.target.attributes['data-name'].value;
+             document.querySelector('.delivery__to-value').innerText = e.target.attributes['data-name'].value;
          }
       }
         })
