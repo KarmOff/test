@@ -18,7 +18,7 @@
             <div id="app">
                 <input type="text" class="delivery__input" v-model="input" autofocus>
                 <ul class="delivery__list">
-                    <li v-for="item in userData | filterBy input myinput">{{item.id}}, {{item.name}}, {{item.price}}</li>
+                    <li v-for="item in userData | filterBy input" v-on:click="myinput">{{item.id}}, {{item.name}}, {{item.price}}</li>
                 </ul>
                 <div class="delivery__result">
                     <div class="delivery__adress">
