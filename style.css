@@ -27,6 +27,8 @@ body {
     border: 0;
     margin: 0 auto;
     height: 30px;
+    background: url(location.png)no-repeat 97% center;
+    padding-right: 40px;
 }
 
 .delivery__list {
