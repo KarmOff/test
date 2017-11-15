@@ -69,7 +69,8 @@
              delivery__list.style.display = "flex";
          },
          element_click: function(e) {
-             console.log(e.target);
+             var this_price = e.target.attributes['data-price'].value;
+             total_price.innerText = this_price;
          }
       }
         })
