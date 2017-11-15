@@ -68,10 +68,8 @@
              var total_price    = document.querySelector('.delivery__total-price');
              delivery__list.style.display = "flex";
          },
-         element_click: function() {
-
-             console.log(this);
-             
+         element_click: function(e) {
+             console.log(e.target);
          }
       }
         })
