@@ -58,12 +58,14 @@
         },
         created() { // when the Vue app is booted up, this is run automatically.
           var self = this // create a closure to access component in the callback below
+          document.querySelector('.delivery__list').style.display = "none";
           $.getJSON(dataURL, function(data) {
             self.userData = data.address;
           });
       }, methods: {
           myinput: function() {
-             console.log('ok');
+             var delivery__list = document.querySelector('.delivery__list');
+             delivery__list.style.display = "flex";
           }
       }
         })
