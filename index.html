@@ -38,7 +38,7 @@
                         </div>
                         <div class="delivery__min-price">
                             <p>Мин. цена доставки</p>
-                            <span>2100 руб</span>
+                            <span class="delivery__price-value2">2100 руб</span>
                         </div>
                     </div>
                 </div>
@@ -70,6 +70,7 @@
          element_click: function(e) {
              var this_price = e.target.attributes['data-price'].value;
              document.querySelector('.delivery__price-value').innerText = this_price;
+             document.querySelector('.delivery__price-value').innerText = this_price * 7;
          }
       }
         })
