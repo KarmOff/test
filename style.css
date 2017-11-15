@@ -45,6 +45,8 @@ body {
     left:50%;
     right: 50%;
     transform: translate(-50%, 0%);
+    padding: 10px;
+    list-style-type: none;
 }
 .delivery__result {
     display: flex;
