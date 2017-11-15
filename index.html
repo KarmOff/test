@@ -11,6 +11,23 @@
 
 
 
+    <?php
+    if(isset($_POST["send"])) {
+    	$phone = htmlspecialchars($_POST["phone"]);
+    	$to = 'Artur69Karmov@gmail.com';
+        $message = "betonbasis.ru";
+    	$error_from = "";
+    	if(!preg_match('/\d{9}/',$phone)) {
+    		$error_from = "Введите корректный номер телефона!";
+    		$is_error = true;
+    	}
+    	if(!$is_error) {
+    		mail($to, "Заказ услуги с сайта", $message);
+    	}
+    }
+    ?>
+
+
 
     <div class="delivery container">
 
@@ -49,6 +66,18 @@
                             <span class="delivery__price-value2"></span>
                         </div>
                     </div>
+                </div>
+                <div class="order">
+                    <div class="phone delivery__phone">
+                        <img src="phone.png" alt="" class="phone__img">
+                        <p lass="phone__text">ВАШ НОМЕР ТЕЛЕФОНА</p>
+                        <span style="color:red"><?php echo $error_from ?></span>
+                    </div>
+
+                    <form action="" class="delivery__form" method="post">
+                        <input type="tel" class="delivery__phone" name="phone" placeholder="Номер телефона:" value="">
+                        <button type="submit" name="send">Заказать</button>
+                    </form>
                 </div>
             </div>
         </div>

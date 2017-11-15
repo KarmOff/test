@@ -14,7 +14,6 @@
 }
 .delivery__calc input {
     flex: 1;
-    height: 100%;
     border: 0;
     font-size: 18px;
     font-weight: 500;
@@ -119,4 +118,36 @@
 .delivery__to {
     flex-direction: column;
     align-items: center;
+}
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.delivery__phone {
+    align-items: center;
+    display: flex;
+}
+.delivery__phone img {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.delivery__form {
+    display: flex;
+    margin-bottom: 20px;
+}
+.delivery__form input {
+    height: 50px;
+    width: 200px;
+    background-color: #E7E7E7;
+    padding: 10px;
+}
+.delivery__form button {
+    width: 200px;
+    height: 70px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
 }
