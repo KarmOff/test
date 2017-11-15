@@ -1,6 +1,4 @@
-body {
 
-}
 #app {
     width: 100%;
     position: relative;
@@ -14,7 +12,16 @@ body {
     margin: auto;
 }
 .delivery__calc input {
-    flex:1;
+    flex: 1;
+    height: 100%;
+    border: 0;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #fff;
+    width: 180px;
+}
+.delivery__calc input:focus {
+    outline: 0;
 }
 .delivery__calc button {
     flex:1;
@@ -24,17 +31,21 @@ body {
 }
 .delivery__input {
     width: 200px;
-    display: block;
+    display: flex;
     border: 0;
     margin: 0 auto;
     height: 50px;
-    background: url(location.png)no-repeat 97% center;
-    padding: 5px 20px 5px 10px;
-    font-size: 18px;
-    font-weight: 500;
-    background-color: #fff;
+    padding: 5px 10px 5px 10px;
+
     border: 1px solid #000;
     margin-bottom: 10px;
+    align-items: center;
+}
+.delivery__input img {
+    flex: 1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 .delivery__item {
     padding: 5px;

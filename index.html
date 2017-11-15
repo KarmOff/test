@@ -16,7 +16,11 @@
         <p class="delivery__title">ДОСТАВКА ДО НАСЕЛЕННОГО ПУНКТА</p>
         <div class="delivery__calc">
             <div id="app">
-                <input type="text" class="delivery__input" v-model="input" v-on:input="myinput" autofocus>
+                <div class="delivery__input">
+                    <input type="text" class="delivery__input-value"  v-model="input" v-on:input="myinput" autofocus>
+                    <img src="clear.png" alt="" v-on:click="clear">
+                </div>
+
                 <ul class="delivery__list">
                     <li v-for="item in userData | filterBy input" class="delivery__item" v-on:click="element_click" data-name='{{item.name}}' data-price='{{item.price}}'>{{item.name}}</li>
                 </ul>
@@ -72,11 +76,15 @@
                   delivery__list.style.display = "flex";
              }
          },
+         clear: function() {
+            document.querySelector('.delivery__input-value').value = "";
+            document.querySelector('.delivery__list').style.display = "none";
+         },
          element_click: function(e) {
              var this_price = e.target.attributes['data-price'].value;
              document.querySelector('.delivery__price-value').innerText = this_price;
              document.querySelector('.delivery__price-value2').innerText = this_price * 7;
-             document.querySelector('.delivery__input').value = e.target.attributes['data-name'].value;
+             document.querySelector('.delivery__input-value').value = e.target.attributes['data-name'].value;
              document.querySelector('.delivery__to-value').innerText = e.target.attributes['data-name'].value;
          }
       }
