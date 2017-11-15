@@ -40,6 +40,9 @@ body {
     padding: 5px;
     cursor: pointer;
 }
+.delivery__item:hover {
+    background-color:  #F7F7F7;
+}
 .delivery__list {
     position: absolute;
     display: flex;
