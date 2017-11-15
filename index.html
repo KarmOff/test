@@ -9,12 +9,44 @@
 </head>
 <body>
 
-    <div id="app">
-        <input type="text" v-model="input" autofocus>
-        <ul>
-            <li v-for="item in userData | filterBy input">{{item.id}}, {{item.name}}</li>
-        </ul>
+
+
+
+    <div class="delivery container">
+        <p class="delivery__title">ДОСТАВКА ДО НАСЕЛЕННОГО ПУНКТА</p>
+        <div class="delivery__calc">
+            <div id="app">
+                <input type="text" v-model="input" autofocus>
+                <button type="button" name="button">Расчитать</button>
+                <ul>
+                    <li v-for="item in userData | filterBy input">{{item.id}}, {{item.name}}, {{item.price}}</li>
+                </ul>
+                <div class="delivery__result">
+                    <div class="delivery__adress">
+                        <div class="delivery__adress-item delivery__from">
+                            <p>Адрес завода</p>
+                            <span>ТАЛЛИНСКОЕ ШОССЕ 153, САНКТ-ПЕТЕРБУРГ</span>
+                        </div>
+                        <div class="delivery__adress-item delivery__to">
+                            <p>Адрес доставки</p>
+                            <span>АЭРОПОРТ ПУЛКОВО-2</span>
+                        </div>
+                    </div>
+                    <div class="delivery__price">
+                        <div class="delivery__total-price">
+                            <p>Цена за м3</p>
+                            <span>300 руб</span>
+                        </div>
+                        <div class="delivery__min-price">
+                            <p>Мин. цена доставки</p>
+                            <span>2100 руб</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 
 
     <script>
@@ -28,7 +60,7 @@
         created() { // when the Vue app is booted up, this is run automatically.
           var self = this // create a closure to access component in the callback below
           $.getJSON(dataURL, function(data) {
-            self.userData = data.users;
+            self.userData = data.address;
           });
         }
         })
