@@ -34,7 +34,7 @@ body {
     flex-direction: column;
     width: 300px;
     margin: 0 auto;
-    height: 200px;
+    height: 400px;
     overflow-y: auto;
 }
 .delivery__result {
