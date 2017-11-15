@@ -65,12 +65,11 @@
       }, methods: {
           myinput: function() {
              var delivery__list = document.querySelector('.delivery__list');
-             var total_price    = document.querySelector('.delivery__total-price');
              delivery__list.style.display = "flex";
          },
          element_click: function(e) {
              var this_price = e.target.attributes['data-price'].value;
-             console.log(this_price);
+             document.querySelector('.delivery__price-value').innerText = this_price;
          }
       }
         })
