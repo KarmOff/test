@@ -34,6 +34,7 @@ body {
     font-weight: 500;
     background-color: #fff;
     border: 1px solid #000;
+    margin-bottom: 10px;
 }
 
 .delivery__list {
@@ -50,16 +51,15 @@ body {
     transform: translate(-50%, 0%);
     padding: 10px;
     list-style-type: none;
-    background-color: #ccc;
 }
 .delivery__result {
     display: flex;
+    background-color: #F7F7F7;
 }
 .delivery__adress {
     display: flex;
     padding: 60px 50px 39px 40px;
     flex: 1;
-    outline: 1px solid #000;
 }
 .delivery__adress-item {
     color: #000;
@@ -82,11 +82,9 @@ body {
 .delivery__price {
     display: flex;
     flex:1;
-    outline: 1px solid #000;
 }
 .delivery__total-price {
     flex: 1;
-    outline: 1px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +92,6 @@ body {
 }
 .delivery__min-price {
     flex: 1;
-    outline: 1px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
