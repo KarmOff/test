@@ -61,6 +61,7 @@ body {
 .delivery__result {
     display: flex;
     background-color: #F7F7F7;
+    height: 300px;
 }
 .delivery__adress {
     display: flex;
