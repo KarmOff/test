@@ -67,6 +67,11 @@
              var delivery__list = document.querySelector('.delivery__list');
              delivery__list.style.display = "flex";
          },
+         display_list_toggle: function(){
+            document.addEventListener('click',function(){
+                delivery__list.style.display = "none";
+            });
+         },
          element_click: function(e) {
              var this_price = e.target.attributes['data-price'].value;
              document.querySelector('.delivery__price-value').innerText = this_price;
