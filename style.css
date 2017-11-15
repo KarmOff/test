@@ -1,6 +1,9 @@
 body {
     background: #ccc;
 }
+#app {
+    width: 100%;
+}
 .delivery__title {
     text-align: center;
 }
