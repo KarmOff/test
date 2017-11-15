@@ -10,6 +10,7 @@
     width: 900px;
     display: flex;
     margin: auto;
+    border: 5px solid #1E73BE;
 }
 .delivery__calc input {
     flex: 1;
