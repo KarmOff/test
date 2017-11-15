@@ -34,7 +34,7 @@
                     <div class="delivery__price">
                         <div class="delivery__total-price">
                             <p>Цена за м3</p>
-                            <span>300 руб</span>
+                            <span class="delivery__price-value">300 руб</span>
                         </div>
                         <div class="delivery__min-price">
                             <p>Мин. цена доставки</p>
@@ -65,7 +65,9 @@
       }, methods: {
           myinput: function() {
              var delivery__list = document.querySelector('.delivery__list');
+             var total_price    = document.querySelector('.delivery__total-price');
              delivery__list.style.display = "flex";
+             total_price.querySelector('.delivery__price-value').innerText = {{item.price}};
           }
       }
         })
