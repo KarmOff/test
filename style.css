@@ -26,9 +26,10 @@ body {
     display: block;
     border: 0;
     margin: 0 auto;
-    height: 30px;
+    height: 50px;
     background: url(location.png)no-repeat 97% center;
     padding-right: 40px;
+    background-color: #fff;
 }
 
 .delivery__list {
