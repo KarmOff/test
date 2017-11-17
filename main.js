@@ -9,7 +9,7 @@ request.open('GET', 'example.json');
 request.onreadystatechange = function() {
     if((request.readyState===4) && (request.status===200)) {
         var items = JSON.parse(request.responseText);
-        var arr = items.address;
+        var item = items.address;
         console.log(arr);
     }
 }
