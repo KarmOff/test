@@ -1,19 +1,19 @@
-
-var request;
-if(window.XMLHttpRequest) {
-    request = new XMLHttpRequest();
-} else {
-    request = new ActiveXObject("Microsoft.XMLHTTP");
-}
-request.open('GET', 'example.json');
-request.onreadystatechange = function() {
-    if((request.readyState===4) && (request.status===200)) {
-        var items = JSON.parse(request.responseText);
-        var items = items.address;
-        console.log(items);
-    }
-}
-request.send();
+//
+// var request;
+// if(window.XMLHttpRequest) {
+//     request = new XMLHttpRequest();
+// } else {
+//     request = new ActiveXObject("Microsoft.XMLHTTP");
+// }
+// request.open('GET', 'example.json');
+// request.onreadystatechange = function() {
+//     if((request.readyState===4) && (request.status===200)) {
+//         var items = JSON.parse(request.responseText);
+//         var items = items.address;
+//         console.log(items);
+//     }
+// }
+// request.send();
 
 var dataURL = 'example.json';
 var app = new Vue({
@@ -22,12 +22,12 @@ var app = new Vue({
     input: '',
     userData: []
 },
-// created() { // when the Vue app is booted up, this is run automatically.
-//        var self = this // create a closure to access component in the callback below
-//        $.getJSON(dataURL, function(data) {
-//          self.userData = data.address;
-//        });
-//    },
+created() { // when the Vue app is booted up, this is run automatically.
+       var self = this // create a closure to access component in the callback below
+       $.getJSON(dataURL, function(data) {
+         self.userData = data.address;
+       });
+   },
 methods: {
     myinput: function() {
         var delivery__list = document.querySelector('.delivery__list');

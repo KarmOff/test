@@ -41,7 +41,7 @@
                 </div>
 
                 <ul class="delivery__list">
-                    <li v-for="udata in items | filterBy input" class="delivery__item" v-on:click="element_click" data-name='{{udata.name}}' data-price='{{udata.price}}'>{{udata.name}}</li>
+                    <li v-for="udata in userData | filterBy input" class="delivery__item" v-on:click="element_click" data-name='{{udata.name}}' data-price='{{udata.price}}'>{{udata.name}}</li>
                 </ul>
                 <div class="delivery__result">
                     <div class="delivery__adress">
