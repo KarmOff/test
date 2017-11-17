@@ -84,63 +84,6 @@
         </div>
     </div>
 
-
-
-    <script>
-        var dataURL = 'example.json';
-        var app = new Vue({
-          el: '#app',
-          data: {
-            input: '',
-            userData: []
-        },
-        methods: {
-          myinput: function() {
-             var delivery__list = document.querySelector('.delivery__list');
-             if(document.querySelector('.delivery__item')) {
-                  delivery__list.style.display = "flex";
-             }
-         },
-         clear: function() {
-            document.querySelector('.delivery__input-value').value = "";
-            document.querySelector('.delivery__list').style.display = "none";
-         },
-         element_click: function(e) {
-             var this_price = e.target.attributes['data-price'].value;
-             document.querySelector('.delivery__price-value').innerText = this_price;
-             document.querySelector('.delivery__price-value2').innerText = this_price * 7;
-             document.querySelector('.delivery__input-value').value = e.target.attributes['data-name'].value;
-             document.querySelector('.delivery__to-value').innerText = e.target.attributes['data-name'].value;
-         }
-      }
-        })
-
-        document.addEventListener('click',function(){
-            document.querySelector('.delivery__list').style.display = "none";
-        });
-
-
-        function loadFile(url) {
-            return new Promise(function(resolve, reject) {
-                var xhr = new XMLHttpRequest();
-
-                xhr.open('GET', url);
-                xhr.responseType = 'json';
-                xhr.send();
-                xhr.addEventListener('load', function () {
-                    if(xhr.status >= 400) {
-                        reject(xhr.status);
-                    } else {
-                        console.log(xhr.response);
-                        console.log(xhr.responseText);
-                        resolve(xhr.response)
-                    }
-                });
-            });
-        }
-
-        loadFile('example.json');
-    </script>
-
+<script src="main.js"></script>
 </body>
 </html>
