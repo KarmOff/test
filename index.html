@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script type="text/javascript" src="example.json"></script>
 </head>
 <body>
 
@@ -93,13 +94,7 @@
             input: '',
             userData: []
         },
-        created() { // when the Vue app is booted up, this is run automatically.
-          var self = this // create a closure to access component in the callback below
-          document.querySelector('.delivery__list').style.display = "none";
-          $.getJSON(dataURL, function(data) {
-            self.userData = data.address;
-          });
-      }, methods: {
+        methods: {
           myinput: function() {
              var delivery__list = document.querySelector('.delivery__list');
              if(document.querySelector('.delivery__item')) {
@@ -123,6 +118,28 @@
         document.addEventListener('click',function(){
             document.querySelector('.delivery__list').style.display = "none";
         });
+
+
+        function loadFile(url) {
+            return new Promise(function(resolve, reject) {
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', url);
+                xhr.responseType = 'json';
+                xhr.send();
+                xhr.addEventListener('load', function () {
+                    if(xhr.status >= 400) {
+                        reject(xhr.status);
+                    } else {
+                        console.log(xhr.response);
+                        console.log(xhr.responseText);
+                        resolve(xhr.response)
+                    }
+                });
+            });
+        }
+
+        loadFile('example.json');
     </script>
 
 </body>
