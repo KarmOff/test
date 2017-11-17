@@ -9,7 +9,8 @@ request.open('GET', 'example.json');
 request.onreadystatechange = function() {
     if((request.readyState===4) && (request.status===200)) {
         var items = JSON.parse(request.responseText);
-        console.log(items);
+        var arr = items.adress;
+        console.log(arr);
     }
 }
 request.send();
