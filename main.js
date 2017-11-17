@@ -10,7 +10,7 @@ request.onreadystatechange = function() {
     if((request.readyState===4) && (request.status===200)) {
         var items = JSON.parse(request.responseText);
         var items = items.address;
-        console.log(item);
+        console.log(items);
     }
 }
 request.send();
