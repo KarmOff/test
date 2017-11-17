@@ -23,7 +23,7 @@ var app = new Vue({
     userData: []
 },
 created() { // when the Vue app is booted up, this is run automatically.
-       var self = this // create a closure to access component in the callback below
+       var self = this; // create a closure to access component in the callback below
        $.getJSON(dataURL, function(data) {
          self.userData = data.address;
        });
